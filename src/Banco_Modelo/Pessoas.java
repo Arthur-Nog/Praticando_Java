@@ -1,10 +1,17 @@
 package Banco_Modelo;
 
-public abstract class Pessoas {
-    String nome, cpf;
-    public Pessoas(String nome, String cpf){
-        this.nome = nome;
-        this.cpf = cpf;
+import java.util.ArrayList;
 
+public abstract class Pessoas {
+    String nome;
+    int idade;
+
+    public Pessoas(String nome, int idade){
+        this.nome = nome;
+        this.idade = idade;
     }
+
+    ArrayList<Pessoas> clientesBanco = new ArrayList<>();
+    ArrayList<Pessoas> gerentesBanco = new ArrayList<>();
+
 }

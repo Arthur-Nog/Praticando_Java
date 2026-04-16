@@ -10,6 +10,8 @@ public class main {
         String login,senha;
 
         Scanner sc = new Scanner(System.in);
+        //CRIAR MÉTODO DE MENU PRINCIPAL
+
         do {
             System.out.println("=========Bem vindo ao seu Banco!=========");
             System.out.println("Decida com qual tipo de login deseja entrar: \n1- Cliente\n2- Gerente\n3- Admin\n4- Sair do programa");

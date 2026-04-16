@@ -2,10 +2,14 @@ package Banco_Modelo;
 
 public class Gerentes extends Pessoas{
     double salario;
+    String login, senha;
 
-    public Gerentes(String nome, int idade, double salario) {
+    public Gerentes(String nome, int idade, double salario, String login, String senha) {
         super(nome, idade);
         this.salario = salario;
+        this.login = login;
+        this.senha = senha;
+
     }
 
     public void adicionarClientes(){

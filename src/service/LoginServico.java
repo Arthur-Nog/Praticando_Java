@@ -1,6 +1,8 @@
 package service;
 
 import model.Admin;
+import model.Gerente;
+import repositore.BancoDeDados;
 
 public class LoginServico {
     public boolean validaLoginAdmin(String loginFornecido, String senhaFornecido) {
@@ -9,5 +11,13 @@ public class LoginServico {
         admin1.setSenha("123");
 
         return loginFornecido.equals(admin1.getLogin()) && senhaFornecido.equals(admin1.getSenha());
+    }
+
+    public boolean validaLoginGerente(String loginFornecido, String senhaFornecida){
+        for (Gerente gerente: BancoDeDados.getGerentesBanco()){
+            if (loginFornecido.equals(gerente.getLogin())&&senhaFornecida.equals(gerente.getSenha())){
+                return true;
+            }
+        }return false;
     }
 }

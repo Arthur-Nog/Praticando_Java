@@ -1,6 +1,5 @@
 package view;
 
-import model.Admin;
 import service.LoginServico;
 
 import java.util.Scanner;
@@ -11,6 +10,7 @@ public class MenuPrincipal {
 
         int opcao;
         String login,senha;
+        boolean loginValido;
         Scanner sc = new Scanner(System.in);
 
         do {
@@ -28,6 +28,11 @@ public class MenuPrincipal {
                     login = sc.nextLine();
                     System.out.println("Digite sua senha: ");
                     senha = sc.nextLine();
+                    loginValido = loginServico.validaLoginGerente(login,senha);
+                    if(loginValido){
+                        MenuGerente menuGerente = new MenuGerente();
+                        menuGerente.exibirMenu();
+                    }
                     break;
 
                 case 3:
@@ -35,7 +40,7 @@ public class MenuPrincipal {
                     login = sc.nextLine();
                     System.out.println("Digite sua senha: ");
                     senha = sc.nextLine();
-                    boolean loginValido = loginServico.validaLoginAdmin(login,senha);
+                    loginValido = loginServico.validaLoginAdmin(login,senha);
                     if (loginValido){
                         MenuAdmin menuAdmin = new MenuAdmin();
                         menuAdmin.exibirMenuAdmin();

@@ -11,7 +11,4 @@ public class Cliente extends Pessoa {
         this.tipo_conta = tipo_conta;
         this.saldo = saldo;
     }
-
-    public void validacaoCliente(){
-    }
 }

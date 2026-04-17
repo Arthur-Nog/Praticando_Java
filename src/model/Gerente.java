@@ -11,23 +11,15 @@ public class Gerente extends Pessoa {
         this.senha = senha;
     }
 
+    public String getNome(){
+        return nome;
+    }
     public String getLogin() {
         return login;
     }
 
     public String getSenha() {
         return senha;
-    }
-
-    public void cadastarClientes(){
-        System.out.println("Informe as seguintes informações do cliente: \n");
-        System.out.println("Nome: \n");
-        System.out.println("Idade: \n");
-        System.out.println("Número da conta: ");
-        System.out.println("Salario: \n");
-    }
-
-    public void validacaoGerente(){
     }
 
 

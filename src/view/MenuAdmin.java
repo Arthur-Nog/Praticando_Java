@@ -1,6 +1,4 @@
 package view;
-
-import model.Admin;
 import service.AdminServico;
 
 import java.util.Scanner;
@@ -20,9 +18,11 @@ public class MenuAdmin {
                     AdminServico.cadastrarGerente();
                     break;
                 case 2:
+                    // Validação se a lista for nula
+                    AdminServico.listarGerentes();
                     break;
                 case 3:
-                    System.out.println("Demitindo gerente");
+                   AdminServico.demitirGerentes();
                     break;
             }
         }while (opcao != 4);

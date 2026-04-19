@@ -1,5 +1,6 @@
 package view;
 import service.AdminServico;
+import service.GerenteServico;
 
 import java.util.Scanner;
 

@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class AdminServico {
 
-
-
     public static void cadastrarGerente(){
         Scanner sc = new Scanner(System.in);
 
@@ -35,7 +33,7 @@ public class AdminServico {
         System.out.println("Senha: ");
         senha = sc.nextLine();
         Gerente gerente = new Gerente(nome,idade,salario,login,senha);
-        BancoDeDados.getGerentesBanco().add(gerente);
+        BancoDeDados.adicionarGerente(gerente);
         System.out.println("Gerente criado: \n" +"=====================\n" + gerente);
         System.out.println("=====================");
         System.out.println("O gerente foi cadastrado com sucesso!");
@@ -56,11 +54,8 @@ public class AdminServico {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o login do gerente que deseja demitir: ");
         String  login = sc.nextLine();
-        for(Gerente gerente : BancoDeDados.getGerentesBanco()){
-            if (gerente.getLogin().equals(login)){
-                BancoDeDados.getGerentesBanco().remove(gerente);
-                System.out.println("Gerente DEMITIDO!");
-            }
-        }
+        boolean removido = BancoDeDados.getGerentesBanco().removeIf(gerente -> gerente.getLogin().equals(login));
+        String mensagem = removido ? "===GERENTE DEMITIDO===" : "===DIGITE UM LOGIN VÁLIDO===";
+        System.out.println(mensagem);
     }
 }

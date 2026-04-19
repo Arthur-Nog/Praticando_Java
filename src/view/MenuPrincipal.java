@@ -1,8 +1,8 @@
 package view;
-
 import service.LoginServico;
-
 import java.util.Scanner;
+
+
 public class MenuPrincipal {
 
     public static void exibirMenu(){
@@ -19,10 +19,18 @@ public class MenuPrincipal {
             opcao = sc.nextInt();
             sc.nextLine();
 
-
             switch (opcao){
                 case 1:
-
+                    System.out.println("Digite seu login: ");
+                    login = sc.nextLine();
+                    System.out.println("Digite sua senha: ");
+                    senha = sc.nextLine();
+                    loginValido = loginServico.validaLoginCliente(login,senha);
+                    if(loginValido){
+                        MenuCliente menuCliente = new MenuCliente();
+                        menuCliente.exibirMenu();
+                    }
+                    break;
                 case 2:
                     System.out.println("Digite seu login: ");
                     login = sc.nextLine();
@@ -34,7 +42,6 @@ public class MenuPrincipal {
                         menuGerente.exibirMenu();
                     }
                     break;
-
                 case 3:
                     System.out.println("Digite seu login: ");
                     login = sc.nextLine();

@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Admin {
     String login = "admin";
     String senha = "123";
-    int opcao;
 
     public String getLogin() {
         return login;

@@ -8,8 +8,8 @@ public class MenuGerente {
         int opcao;
         Scanner sc = new Scanner(System.in);
         do {
-            System.out.println("Bem vindo");
-            System.out.println("Decida qual opção: \n1- Cadastrar novo cliente\n2- Listar clientes\n3- Remover Cliente \n4- Voltar para menu anterior");
+            System.out.println("===== BEM VINDO AO MENU GERENTE =====");
+            System.out.println("DECIDA QUAL AÇÃO: \n1- CADASTRAR CLIENTE\n2- LISTAR CLIENTES\n3- REMOVER CLIENTE \n4- VOLTAR MENU ANTERIOR");
             opcao = sc.nextInt();
             sc.nextLine();
             switch (opcao){

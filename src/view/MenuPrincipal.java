@@ -1,6 +1,8 @@
 package view;
+import model.Cliente;
 import service.LoginServico;
 import java.util.Scanner;
+
 
 
 public class MenuPrincipal {
@@ -14,27 +16,27 @@ public class MenuPrincipal {
         Scanner sc = new Scanner(System.in);
 
         do {
-            System.out.println("=========Bem vindo ao seu Banco!=========");
-            System.out.println("Decida com qual tipo de login deseja entrar: \n1- Cliente\n2- Gerente\n3- Admin\n4- Sair do programa");
+            System.out.println("=========BEM VINDO AO MENU PRINCIPAL!=========");
+            System.out.println("DECIDA COM QUAL TIPO DE LOGIN DESEJA ENTRAR OU SAIR DO PROGRAMA \n1- [Cliente]\n2- [Gerente]\n3- [Admin]\n4- Sair do programa");
             opcao = sc.nextInt();
             sc.nextLine();
 
             switch (opcao){
                 case 1:
-                    System.out.println("Digite seu login: ");
+                    System.out.println("DIGITE SEU LOGIN: ");
                     login = sc.nextLine();
-                    System.out.println("Digite sua senha: ");
+                    System.out.println("DIGITE SUA SENHA: ");
                     senha = sc.nextLine();
-                    loginValido = loginServico.validaLoginCliente(login,senha);
+                    loginValido = loginServico.validaLoginCliente(login, senha);
                     if(loginValido){
                         MenuCliente menuCliente = new MenuCliente();
-                        menuCliente.exibirMenu();
+                        menuCliente.exibirMenu(login);
                     }
                     break;
                 case 2:
-                    System.out.println("Digite seu login: ");
+                    System.out.println("DIGITE SEU LOGIN: ");
                     login = sc.nextLine();
-                    System.out.println("Digite sua senha: ");
+                    System.out.println("DIGITE SUA SENHA: ");
                     senha = sc.nextLine();
                     loginValido = loginServico.validaLoginGerente(login,senha);
                     if(loginValido){
@@ -43,16 +45,16 @@ public class MenuPrincipal {
                     }
                     break;
                 case 3:
-                    System.out.println("Digite seu login: ");
+                    System.out.println("DIGITE SEU LOGIN: ");
                     login = sc.nextLine();
-                    System.out.println("Digite sua senha: ");
+                    System.out.println("DIGITE SUA SENHA: ");
                     senha = sc.nextLine();
                     loginValido = loginServico.validaLoginAdmin(login,senha);
                     if (loginValido){
                         MenuAdmin menuAdmin = new MenuAdmin();
                         menuAdmin.exibirMenuAdmin();
                     }else {
-                        System.out.println("Login ou senha incorretos! ");
+                        System.out.println("LOGIN OU SENHA INCORRETOS! ");
                     }
                     break;
             }

@@ -10,8 +10,8 @@ public class MenuAdmin {
         int opcao;
         Scanner sc = new Scanner(System.in);
         do {
-            System.out.println("Bem vindo");
-            System.out.println("Decida qual opção: \n1- Contratar gerente\n2- Listar Gerente\n3- Demitir gerente\n4- Voltar para menu anterior");
+            System.out.println("===== BEM VINDO AO MENU ADMIN =====");
+            System.out.println("DECIDA QUAL AÇÃO: \n1- CONTRATAR GERENTE\n2- LISTAR GERENTE\n3- DEMITIR GERENTE\n4- VOLTAR PARA MENU ANTERIOR ");
             opcao = sc.nextInt();
             sc.nextLine();
             switch (opcao){
